@@ -5,7 +5,9 @@ import Home from './screens/Home';
 const Stack = createStackNavigator();
 
 const Routes = () => (
-  <Stack.Navigator>
+  <Stack.Navigator
+    headerMode="none"
+  >
     <Stack.Screen
       name="Home"
       component={Home}

@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 
 const Home = () => (
-  <View>
-    <Text>
-      Home
-    </Text>
-  </View>
+  <SafeAreaView>
+    <View>
+      <Text>Home</Text>
+    </View>
+  </SafeAreaView>
 );
 
 export default Home;
