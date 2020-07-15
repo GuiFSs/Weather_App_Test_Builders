@@ -1,0 +1,11 @@
+import axios from 'axios';
+import openWeatherApiKey from './apiKey';
+
+const api = axios.create({
+  baseURL: 'api.openweathermap.org/data/2.5',
+  params: {
+    appid: openWeatherApiKey,
+  },
+});
+
+export default api;
