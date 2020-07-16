@@ -23,7 +23,7 @@ const BottomSection = () => {
         { key: 'máxima', value: `${getFormattedDegrees(temp_max)} ºC` },
 
         { key: 'pressão', value: `${pressure}hPa` },
-        { key: 'humidade', value: `${humidity}%` },
+        { key: 'umidade', value: `${humidity}%` },
 
         { key: 'vel. vento', value: `${speed}km/h` },
         { key: 'dir. vento', value: `${deg}` },
