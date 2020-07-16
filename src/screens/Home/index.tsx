@@ -11,6 +11,7 @@ import { ThemeTitleEnum } from '../../core/interfaces/theme';
 import { useGeolocation } from '../../core/hooks/useGeolocation';
 import { LoaderStatusEnum } from '../../core/enums/loaderStatus';
 import LoadingModal from '../../core/components/LoadingModal';
+import BottomSection from './components/BottomSection';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ const Home = () => {
       />
       <Header />
       <TopSection />
+      <BottomSection />
     </SafeArea>
   );
 };
