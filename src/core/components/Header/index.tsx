@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 
-import { Container, Title } from './styles';
+import { Container, Title, MenuIcon } from './styles';
 
 const Header = () => (
   <Container>
+    <MenuIcon
+      name="menu"
+      size={80}
+      color="red"
+    />
     <Title>
       Clima
     </Title>

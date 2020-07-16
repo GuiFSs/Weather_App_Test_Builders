@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
 import { useDispatch } from 'react-redux';
 import WeatherActions from '../../stores/ducks/weather/actions';
+import Header from '../../core/components/Header';
+
+import { SafeArea } from './styles';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,11 +18,9 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <SafeAreaView>
-      <View>
-        <Text>Home</Text>
-      </View>
-    </SafeAreaView>
+    <SafeArea>
+      <Header />
+    </SafeArea>
   );
 };
 
