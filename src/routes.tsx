@@ -1,25 +1,26 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ThemeProvider } from 'styled-components/native';
 import { useSelector } from 'react-redux';
 import Home from './screens/Home';
 import { AppStateType } from './stores';
+import DrawerContent from './core/components/DrawerContent';
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const Routes = () => {
   const { theme } = useSelector((state: AppStateType) => state.preferences);
 
   return (
     <ThemeProvider theme={theme}>
-      <Stack.Navigator
-        headerMode="none"
+      <Drawer.Navigator
+        drawerContent={(props) => <DrawerContent {...props} />}
       >
-        <Stack.Screen
+        <Drawer.Screen
           name="Home"
           component={Home}
         />
-      </Stack.Navigator>
+      </Drawer.Navigator>
     </ThemeProvider>
   );
 };

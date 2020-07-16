@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { StatusBar } from 'react-native';
+import { DrawerScreenProps } from '@react-navigation/drawer';
 import Header from '../../core/components/Header';
 import WeatherActions from '../../stores/ducks/weather/actions';
 import { SafeArea } from './styles';
@@ -13,7 +14,7 @@ import { LoaderStatusEnum } from '../../core/enums/loaderStatus';
 import LoadingModal from '../../core/components/LoadingModal';
 import BottomSection from './components/BottomSection';
 
-const Home = () => {
+const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const { theme } = useSelector((state: AppStateType) => state.preferences);
@@ -51,7 +52,9 @@ const Home = () => {
         backgroundColor={theme.colors.background}
         barStyle={barStyle}
       />
-      <Header />
+      <Header
+        onPressMenu={() => navigation.openDrawer()}
+      />
       <TopSection />
       <BottomSection />
     </SafeArea>

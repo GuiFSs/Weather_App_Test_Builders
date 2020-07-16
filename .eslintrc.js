@@ -44,6 +44,7 @@ module.exports = {
     'react/prop-types': 'off',
     '@typescript-eslint/camelcase': 'off',
     camelcase: 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
   settings: {
     'import/parsers': {
