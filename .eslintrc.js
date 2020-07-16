@@ -42,6 +42,8 @@ module.exports = {
     'react/destructuring-assignment': 'warn',
     '@typescript-eslint/no-empty-interface': 'off',
     'react/prop-types': 'off',
+    '@typescript-eslint/camelcase': 'off',
+    camelcase: 'off',
   },
   settings: {
     'import/parsers': {

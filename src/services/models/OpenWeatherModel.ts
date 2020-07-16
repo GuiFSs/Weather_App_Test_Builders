@@ -24,9 +24,9 @@ export interface ICoord {
 
 export interface IMain {
   temp: number
-  feelsLike: number
-  tempMin: number
-  tempMax: number
+  feels_like: number
+  temp_min: number
+  temp_max: number
   pressure: number
   humidity: number
 }

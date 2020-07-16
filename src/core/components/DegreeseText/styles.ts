@@ -10,12 +10,12 @@ export const Container = styled.View`
 
 export const Degrees = styled(ThemeText)<IDegreesProps>`
   font-size: ${({ degreesTextSize = 55 }) => RFValue(degreesTextSize)}px;
-  font-weight: bold;
+  font-weight: ${({ bold = true }) => (bold ? 'bold' : 'normal')};
 `;
 
 export const Unit = styled(ThemeText)<IUnitProps>`
   font-size: ${({ unitTextSize = 25 }) => RFValue(unitTextSize)}px;
   opacity: 0.8;
   margin-top: ${({ aligned }) => (aligned ? 0 : '-5%')};
-  margin-left: 7px;
+  margin-left: 5px;
 `;
