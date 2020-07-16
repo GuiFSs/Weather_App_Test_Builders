@@ -3,7 +3,7 @@ import {
   ISetWeather, WeatherTypesEnum, ISetLoaderStatus, IClearWeatherState, IGetWeatherByCoordTrigger,
 } from './types';
 import { action } from '../../helpers/actionHelper';
-import { LoaderStatusEnum } from '../../../core/enums/storeState';
+import { LoaderStatusEnum } from '../../../core/enums/loaderStatus';
 import { IGetWeatherByCoordParams } from '../../../services/interfaces/GetWeatherByCoordParams';
 
 const WeatherActions = {

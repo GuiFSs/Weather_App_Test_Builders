@@ -1,4 +1,4 @@
-import { LoaderStatusEnum } from '../../../core/enums/storeState';
+import { LoaderStatusEnum } from '../../../core/enums/loaderStatus';
 import { IOpenWeatherModel } from '../../../services/models/OpenWeatherModel';
 import { IGetWeatherByCoordParams } from '../../../services/interfaces/GetWeatherByCoordParams';
 

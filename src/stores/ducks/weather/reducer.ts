@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 import { IWeatherState, WeatherActionsType, WeatherTypesEnum } from './types';
-import { LoaderStatusEnum } from '../../../core/enums/storeState';
+import { LoaderStatusEnum } from '../../../core/enums/loaderStatus';
 
 const INITIAL_STATE: IWeatherState = {
   data: null,
