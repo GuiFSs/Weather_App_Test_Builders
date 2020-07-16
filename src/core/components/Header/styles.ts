@@ -8,6 +8,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: space-between;
   padding-bottom: 15px;
+  z-index: 1;
 `;
 
 export const Title = styled(ThemeText)`

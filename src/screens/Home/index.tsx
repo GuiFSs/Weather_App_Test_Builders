@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { StatusBar } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
@@ -13,6 +13,8 @@ import { useGeolocation } from '../../core/hooks/useGeolocation';
 import { LoaderStatusEnum } from '../../core/enums/loaderStatus';
 import LoadingModal from '../../core/components/LoadingModal';
 import BottomSection from './components/BottomSection';
+import FloatButton from '../../core/components/FloatButton';
+import Background from '../../core/components/Background';
 
 const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -24,16 +26,20 @@ const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
     coords, getGeolocation,
   } = useGeolocation();
 
-  useEffect(() => {
-    getGeolocation();
-  }, [getGeolocation]);
-
-  useEffect(() => {
+  const getWeather = useCallback(() => {
     if (!coords) return;
     dispatch(WeatherActions.getWeatherByCoord({
       coord: coords,
     }));
   }, [dispatch, coords]);
+
+  useEffect(() => {
+    getGeolocation();
+  }, [getGeolocation]);
+
+  useEffect(() => {
+    getWeather();
+  }, [getWeather]);
 
   const barStyle = useMemo(() => {
     let style: BarStyleType = 'light-content';
@@ -53,10 +59,17 @@ const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
         barStyle={barStyle}
       />
       <Header
-        onPressMenu={() => navigation.openDrawer()}
+        onPressMenu={() => {
+          console.log('--- WHY');
+          navigation.openDrawer();
+        }}
       />
       <TopSection />
       <BottomSection />
+      <FloatButton
+        onPress={getWeather}
+      />
+      <Background />
     </SafeArea>
   );
 };

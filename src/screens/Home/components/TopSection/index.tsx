@@ -26,7 +26,7 @@ const TopSection = () => {
       todayDate: _todayDate,
       time: formatDate(dateNow, 'hh:mm'),
     };
-  }, []);
+  }, [weatherData]);
 
   const {
     degrees, location, feelsLike, weatherDescription, weatherIcon,
