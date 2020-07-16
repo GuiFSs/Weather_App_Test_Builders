@@ -49,13 +49,13 @@ export const KeyValueView = styled.View`
   margin: 7px 12px;
 `;
 
-export const Key = styled.Text`
+export const Key = styled(ThemeText)`
   color: ${({ theme }) => theme.colors.background};
   font-size: ${RFValue(16)}px;
   font-weight: bold;
 `;
 
-export const Value = styled.Text`
+export const Value = styled(ThemeText)`
   color: ${({ theme }) => hexToRgba(theme.colors.background, 0.5)};
   font-size: ${RFValue(13)}px;
 `;
