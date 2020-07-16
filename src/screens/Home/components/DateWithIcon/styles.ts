@@ -1,18 +1,24 @@
 import styled from 'styled-components/native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { hexToRgba } from '../../../../core/utils/helperFunctions';
 import { ThemeText } from '../../../../core/styles/ThemeText';
+import { IIconProps } from './types';
 
 export const Container = styled.View`
   flex-direction: row;
   align-items: center;
 `;
 
-export const WeatherIcon = styled(Icon)`
+export const WeatherIconView = styled.View`
+  margin-right: 10px;
+  background-color: ${({ theme }) => hexToRgba(theme.colors.text, 0.5)};
+  border-radius: 60px;
+`;
+
+export const WeatherIcon = styled.Image<IIconProps>`
+  width: ${RFValue(50)}px;
+  height: ${RFValue(50)}px;
   color: ${({ theme }) => theme.colors.primary};
-  margin: 0;
-  font-size: ${RFValue(25)}px;
-  margin-right: 15px;
 `;
 
 export const DateView = styled.View`

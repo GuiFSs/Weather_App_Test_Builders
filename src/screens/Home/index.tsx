@@ -8,20 +8,26 @@ import TopSection from './components/TopSection';
 import { AppStateType } from '../../stores';
 import { BarStyleType } from '../../core/types/BarStyle';
 import { ThemeTitleEnum } from '../../core/interfaces/theme';
+import { useGeolocation } from '../../core/hooks/useGeolocation';
 
 const Home = () => {
   const dispatch = useDispatch();
 
   const { theme } = useSelector((state: AppStateType) => state.preferences);
+  const {
+    coords, getGeolocation,
+  } = useGeolocation();
 
   useEffect(() => {
+    getGeolocation();
+  }, [getGeolocation]);
+
+  useEffect(() => {
+    if (!coords) return;
     dispatch(WeatherActions.getWeatherByCoord({
-      coord: {
-        lat: 35,
-        lon: 139,
-      },
+      coord: coords,
     }));
-  }, [dispatch]);
+  }, [dispatch, coords]);
 
   const barStyle = useMemo(() => {
     let style: BarStyleType = 'light-content';

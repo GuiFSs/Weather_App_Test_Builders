@@ -5,14 +5,19 @@ import {
   Today,
   DateText,
   DateView,
+  WeatherIconView,
 } from './styles';
 import { IProps } from './types';
+import { getOpenWeatherIconUrl } from '../../../../core/utils/helperFunctions';
 
-const DateWithIcon: React.FC<IProps> = ({ date }) => (
+const DateWithIcon: React.FC<IProps> = ({ date, icon }) => (
   <Container>
-    <WeatherIcon
-      name="weather-pouring"
-    />
+    <WeatherIconView>
+      <WeatherIcon
+        source={{ uri: getOpenWeatherIconUrl(icon) }}
+        icon={icon}
+      />
+    </WeatherIconView>
     <DateView>
       <Today>
         Hoje

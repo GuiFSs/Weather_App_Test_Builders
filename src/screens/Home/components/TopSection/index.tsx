@@ -29,22 +29,25 @@ const TopSection = () => {
   }, []);
 
   const {
-    degrees, location, feelsLike, weatherDescription,
+    degrees, location, feelsLike, weatherDescription, weatherIcon,
   } = useMemo(() => {
     let _location = '';
     let _degrees = '';
     let _feelsLike = '';
     let _weatherDescription = '';
+    let _weatherIcon = '';
     if (weatherData) {
       const {
-        main, sys, weather,
+        main, sys, weather, name,
       } = weatherData;
       const { temp, feels_like } = main;
-      _weatherDescription = weather[0]?.description || '';
+      const currentWeather = weather[0];
+      _weatherIcon = currentWeather.icon;
+      _weatherDescription = currentWeather?.description || '';
       _weatherDescription = firstLetterToUpperCase(_weatherDescription);
       _feelsLike = feels_like.toFixed();
       _degrees = temp.toFixed();
-      _location = sys.country;
+      _location = `${name}, ${sys.country}`;
     }
 
     return {
@@ -52,6 +55,7 @@ const TopSection = () => {
       feelsLike: _feelsLike,
       degrees: _degrees,
       weatherDescription: _weatherDescription,
+      weatherIcon: _weatherIcon,
     };
   }, [weatherData]);
 
@@ -59,6 +63,7 @@ const TopSection = () => {
     <Container>
       <DateWithIcon
         date={todayDate}
+        icon={weatherIcon}
       />
       <DegreesText
         degrees={degrees}

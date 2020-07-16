@@ -23,6 +23,6 @@ export const darkTheme: DefaultTheme = {
     primary,
     secondary: '#f7b801',
     background: '#10103B',
-    text: '#FFF',
+    text: '#FFFFFF',
   },
 };
