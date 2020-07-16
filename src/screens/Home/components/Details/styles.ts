@@ -1,10 +1,10 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Fontisto';
-import { hexToRgba } from '../../../../core/utils/helperFunctions';
-import { ThemeText } from '../../../../core/styles/ThemeText';
 import { IContainerProps, IWindDirectionProps } from './types';
-import { LoaderStatusEnum } from '../../../../core/enums/loaderStatus';
+import { LoaderStatusEnum } from '~/core/enums/loaderStatus';
+import { ThemeText } from '~/core/styles/ThemeText';
+import { hexToRgba } from '~/core/utils/helperFunctions';
 
 export const Container = styled.View<IContainerProps>`
   display: ${({ loaderStatus }) => {

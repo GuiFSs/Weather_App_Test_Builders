@@ -1,7 +1,7 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import Icon from 'react-native-vector-icons/AntDesign';
 import styled from 'styled-components/native';
-import { CustomTouchableOpacity } from '../../styles/CustomTouchableOpacity';
+import { CustomTouchableOpacity } from '~/core/styles/CustomTouchableOpacity';
 
 export const Button = styled(CustomTouchableOpacity)`
   position: absolute;

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Container, Cloud1, Cloud2, Cloud3,
 } from './styles';
-import images from '../../../assets';
+import images from '~/assets';
 
 const Background = () => (
   <Container>

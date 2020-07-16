@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Feather';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { ThemeText } from '../../styles/ThemeText';
+import { ThemeText } from '~/core/styles/ThemeText';
 
 export const Container = styled.View`
   flex-direction: row;

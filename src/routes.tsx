@@ -2,9 +2,9 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ThemeProvider } from 'styled-components/native';
 import { useSelector } from 'react-redux';
-import Home from './screens/Home';
 import { AppStateType } from './stores';
-import DrawerContent from './core/components/DrawerContent';
+import DrawerContent from '~/core/components/DrawerContent';
+import Home from '~/screens/Home';
 
 const Drawer = createDrawerNavigator();
 

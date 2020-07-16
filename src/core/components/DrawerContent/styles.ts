@@ -1,6 +1,6 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
-import { ThemeText } from '../../styles/ThemeText';
+import { ThemeText } from '~/core/styles/ThemeText';
 
 export const Container = styled.View`
   flex: 1;

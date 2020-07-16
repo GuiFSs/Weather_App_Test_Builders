@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import { View } from 'react-native';
 import { useSelector } from 'react-redux';
-import Details from '../Details';
-import { AppStateType } from '../../../../stores';
+import { getFormattedDegrees } from '~/core/utils/helperFunctions';
+import { AppStateType } from '~/stores';
 import { IKeyValue } from '../Details/types';
-import { getFormattedDegrees } from '../../../../core/utils/helperFunctions';
+import Details from '../Details';
 
 const BottomSection = () => {
   const { data: weatherData, loaderStatus } = useSelector((state: AppStateType) => state.weather);

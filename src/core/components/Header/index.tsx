@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Container, Title, MenuIcon } from './styles';
-import { CustomTouchableOpacity } from '../../styles/CustomTouchableOpacity';
 import { IProps } from './types';
+import { CustomTouchableOpacity } from '~/core/styles/CustomTouchableOpacity';
 
 const Header: React.FC<IProps> = ({ onPressMenu }) => (
   <Container>

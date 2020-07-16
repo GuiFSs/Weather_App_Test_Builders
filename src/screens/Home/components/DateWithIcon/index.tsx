@@ -8,7 +8,7 @@ import {
   WeatherIconView,
 } from './styles';
 import { IProps } from './types';
-import { getOpenWeatherIconUrl } from '../../../../core/utils/helperFunctions';
+import { getOpenWeatherIconUrl } from '~/core/utils/helperFunctions';
 
 const DateWithIcon: React.FC<IProps> = ({ date, icon }) => (
   <Container>

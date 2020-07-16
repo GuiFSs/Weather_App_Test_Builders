@@ -7,10 +7,10 @@ import {
   Text,
 } from './styles';
 import DateWithIcon from '../DateWithIcon';
-import { formatDate, firstLetterToUpperCase, getFormattedDegrees } from '../../../../core/utils/helperFunctions';
-import DegreesText from '../../../../core/components/DegreeseText';
-import Dot from '../../../../core/components/Dot';
-import { AppStateType } from '../../../../stores';
+import { formatDate, firstLetterToUpperCase, getFormattedDegrees } from '~/core/utils/helperFunctions';
+import { AppStateType } from '~/stores';
+import DegreesText from '~/core/components/DegreeseText';
+import Dot from '~/core/components/Dot';
 
 const TopSection = () => {
   const { data: weatherData } = useSelector((state: AppStateType) => state.weather);

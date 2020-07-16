@@ -1,9 +1,9 @@
-import { ITheme } from '../../../core/interfaces/theme';
 import {
   ISetTheme, PreferencesTypesEnum, ISetPreferencesLoaderStatus, IClearPreferencesState,
 } from './types';
-import { action } from '../../helpers/actionHelper';
-import { LoaderStatusEnum } from '../../../core/enums/loaderStatus';
+import { ITheme } from '~/core/interfaces/theme';
+import { action } from '~/stores/helpers/actionHelper';
+import { LoaderStatusEnum } from '~/core/enums/loaderStatus';
 
 const PreferencesActions = {
   setTheme: (

@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import Geolocation from '@react-native-community/geolocation';
 import { Alert } from 'react-native';
-import { ICoord } from '../../services/models/OpenWeatherModel';
+import { ICoord } from '~/services/models/OpenWeatherModel';
 
 export function useGeolocation() {
   const [coords, setCoords] = useState<ICoord | null>(null);

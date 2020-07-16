@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { hexToRgba } from '../../../../core/utils/helperFunctions';
-import { ThemeText } from '../../../../core/styles/ThemeText';
 import { IIconProps } from './types';
+import { hexToRgba } from '~/core/utils/helperFunctions';
+import { ThemeText } from '~/core/styles/ThemeText';
 
 export const Container = styled.View`
   flex-direction: row;

@@ -3,13 +3,13 @@ import React, { useMemo } from 'react';
 import { Switch } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppStateType } from '../../../stores';
-import PreferencesActions from '../../../stores/ducks/preferences/actions';
-import { ThemeTitleEnum } from '../../interfaces/theme';
-import { darkTheme, lightTheme } from '../../styles/theme';
 import {
   Container, ItemText, ItemView, AppVersion,
 } from './styles';
+import { AppStateType } from '~/stores';
+import { ThemeTitleEnum } from '~/core/interfaces/theme';
+import { darkTheme, lightTheme } from '~/core/styles/theme';
+import PreferencesActions from '~/stores/ducks/preferences/actions';
 
 const DrawerContent: React.FC<DrawerContentComponentProps<DrawerContentOptions>> = () => {
   const dispatch = useDispatch();

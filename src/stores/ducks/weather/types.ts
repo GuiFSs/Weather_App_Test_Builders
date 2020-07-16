@@ -1,6 +1,6 @@
-import { LoaderStatusEnum } from '../../../core/enums/loaderStatus';
-import { IOpenWeatherModel } from '../../../services/models/OpenWeatherModel';
-import { IGetWeatherByCoordParams } from '../../../services/interfaces/GetWeatherByCoordParams';
+import { IOpenWeatherModel } from '~/services/models/OpenWeatherModel';
+import { LoaderStatusEnum } from '~/core/enums/loaderStatus';
+import { IGetWeatherByCoordParams } from '~/services/interfaces/GetWeatherByCoordParams';
 
 /**
  * Types definitions

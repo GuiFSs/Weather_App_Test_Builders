@@ -3,11 +3,11 @@ import { AxiosResponse } from 'axios';
 import { Alert } from 'react-native';
 import { WeatherTypesEnum, IGetWeatherByCoordTrigger } from './types';
 import WeatherActions from './actions';
-import { LoaderStatusEnum } from '../../../core/enums/loaderStatus';
-import { WeatherUnitEnum } from '../../../services/interfaces/GetWeatherByCoordParams';
-import { IOpenWeatherModel } from '../../../services/models/OpenWeatherModel';
-import callApi from '../../../services/api';
-import { HttpMethodEnum } from '../../../services/interfaces/Request';
+import { LoaderStatusEnum } from '~/core/enums/loaderStatus';
+import { WeatherUnitEnum } from '~/services/interfaces/GetWeatherByCoordParams';
+import { IOpenWeatherModel } from '~/services/models/OpenWeatherModel';
+import callApi from '~/services/api';
+import { HttpMethodEnum } from '~/services/interfaces/Request';
 
 function* getWeatherByCoord({ payload }: IGetWeatherByCoordTrigger) {
   yield put(WeatherActions.setLoaderStatus(LoaderStatusEnum.loading));
