@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import Icon from 'react-native-vector-icons/Entypo';
+import Icon from 'react-native-vector-icons/Feather';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { ThemeText } from '../../styles/ThemeText';
 
@@ -20,4 +20,5 @@ export const Title = styled(ThemeText)`
 export const MenuIcon = styled(Icon)`
   font-size: ${RFValue(35)}px;
   color: ${({ theme }) => theme.colors.text};
+  transform: rotate(90deg);
 `;
