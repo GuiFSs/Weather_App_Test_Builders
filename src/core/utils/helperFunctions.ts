@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
+import { StringOrNumber } from '../types/StringOrNumber';
 
 export function formatDate(date: Date, formatStr: string) {
   return format(date, formatStr, {
@@ -15,7 +16,7 @@ export function getOpenWeatherIconUrl(icon:string) {
   return `http://openweathermap.org/img/wn/${icon}@2x.png`;
 }
 
-export const hexToRgba = (hex: string, A?: number) => {
+export function hexToRgba(hex: string, A?: number) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   const rgbObj = result ? {
     R: parseInt(result[1], 16),
@@ -28,4 +29,8 @@ export const hexToRgba = (hex: string, A?: number) => {
     colorString = `rgba(${R}, ${G}, ${B}, ${A !== undefined ? A : 1})`;
   }
   return colorString;
-};
+}
+
+export function getFormattedDegrees(degrees: number) {
+  return degrees.toFixed(1);
+}

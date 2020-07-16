@@ -7,7 +7,7 @@ import {
   Text,
 } from './styles';
 import DateWithIcon from '../DateWithIcon';
-import { formatDate, firstLetterToUpperCase } from '../../../../core/utils/helperFunctions';
+import { formatDate, firstLetterToUpperCase, getFormattedDegrees } from '../../../../core/utils/helperFunctions';
 import DegreesText from '../../../../core/components/DegreeseText';
 import Dot from '../../../../core/components/Dot';
 import { AppStateType } from '../../../../stores';
@@ -45,8 +45,8 @@ const TopSection = () => {
       _weatherIcon = currentWeather.icon;
       _weatherDescription = currentWeather?.description || '';
       _weatherDescription = firstLetterToUpperCase(_weatherDescription);
-      _feelsLike = feels_like.toFixed();
-      _degrees = temp.toFixed();
+      _feelsLike = getFormattedDegrees(feels_like);
+      _degrees = getFormattedDegrees(temp);
       _location = `${name}, ${sys.country}`;
     }
 
