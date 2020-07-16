@@ -5,10 +5,12 @@ declare module 'styled-components' {
   export interface DefaultTheme extends ITheme {}
 }
 
+const primary = '#3879E0';
+
 export const lightTheme: DefaultTheme = {
   title: ThemeTitleEnum.light,
   colors: {
-    primary: '#4995E9',
+    primary,
     secondary: '#f7b801',
     background: '#F3FBFF',
     text: '#2A365A',
@@ -18,7 +20,7 @@ export const lightTheme: DefaultTheme = {
 export const darkTheme: DefaultTheme = {
   title: ThemeTitleEnum.dark,
   colors: {
-    primary: '#4995E9',
+    primary,
     secondary: '#f7b801',
     background: '#10103B',
     text: '#FFF',

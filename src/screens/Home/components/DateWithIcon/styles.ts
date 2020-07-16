@@ -28,4 +28,5 @@ export const Today = styled(ThemeText)`
 export const DateText = styled(ThemeText)`
   font-size: ${RFValue(14)}px;
   margin-top: 4px;
+  opacity: 0.75;
 `;
