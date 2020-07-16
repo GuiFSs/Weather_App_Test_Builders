@@ -1,21 +1,52 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import Geolocation from '@react-native-community/geolocation';
-import { Alert } from 'react-native';
+import { Alert, PermissionsAndroid } from 'react-native';
 import { ICoord } from '~/services/models/OpenWeatherModel';
 
 export function useGeolocation() {
   const [coords, setCoords] = useState<ICoord | null>(null);
+  const [hasLocationPermission, setHasLocationPermission] = useState(false);
 
-  const getGeolocation = useCallback(() => {
-    Geolocation.getCurrentPosition(({ coords: newCoords }) => setCoords({
-      lat: newCoords.latitude,
-      lon: newCoords.longitude,
-    }), ({ message }) => {
-      Alert.alert(message);
-    });
+  useEffect(() => {
+    if (hasLocationPermission) {
+      Geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => setCoords({
+        lat: latitude,
+        lon: longitude,
+      }), ({ message }) => {
+        Alert.alert(message);
+      });
+    }
+  }, [hasLocationPermission]);
+
+  const checkPermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
+      return granted;
+    } catch (err) {
+      Alert.alert('Erro ao checar permissões');
+      return false;
+    }
+  };
+
+  const requestPermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
+      return granted;
+    } catch (err) {
+      Alert.alert('Erro ao requisitar permissões');
+      return false;
+    }
+  };
+  const getGeolocation = useCallback(async () => {
+    const permissionGranted = await checkPermission();
+    if (!permissionGranted) {
+      requestPermission();
+    } else {
+      setHasLocationPermission(true);
+    }
   }, []);
 
   return {
-    coords, getGeolocation,
+    coords, getGeolocation, hasLocationPermission, requestPermission,
   };
 }

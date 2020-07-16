@@ -20,18 +20,22 @@ const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const { theme } = useSelector((state: AppStateType) => state.preferences);
-  const { loaderStatus: weatherLoader } = useSelector((state: AppStateType) => state.weather);
+  const { loaderStatus: weatherLoader, data } = useSelector((state: AppStateType) => state.weather);
 
   const {
-    coords, getGeolocation,
+    coords, getGeolocation, hasLocationPermission,
   } = useGeolocation();
 
   const getWeather = useCallback(() => {
+    if (!hasLocationPermission) {
+      getGeolocation();
+      return;
+    }
     if (!coords) return;
     dispatch(WeatherActions.getWeatherByCoord({
       coord: coords,
     }));
-  }, [dispatch, coords]);
+  }, [coords, hasLocationPermission, dispatch, getGeolocation]);
 
   useEffect(() => {
     getGeolocation();
@@ -51,6 +55,20 @@ const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
 
   const loading = useMemo(() => weatherLoader === LoaderStatusEnum.loading, [weatherLoader]);
 
+  const showContent = useMemo(() => {
+    switch (weatherLoader) {
+      case LoaderStatusEnum.initial:
+        return false;
+      case LoaderStatusEnum.loading:
+        if (data) return true;
+        return false;
+      case LoaderStatusEnum.loaded:
+        return true;
+      default:
+        return true;
+    }
+  }, [weatherLoader, data]);
+
   return (
     <SafeArea>
       <Background />
@@ -62,8 +80,12 @@ const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
       <Header
         onPressMenu={() => navigation.openDrawer()}
       />
-      <TopSection />
-      <BottomSection />
+      {showContent && (
+        <>
+          <TopSection />
+          <BottomSection />
+        </>
+      )}
       <FloatButton
         onPress={getWeather}
       />

@@ -1,29 +1,19 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Fontisto';
-import { IContainerProps, IWindDirectionProps } from './types';
-import { LoaderStatusEnum } from '~/core/enums/loaderStatus';
+import { IWindDirectionProps } from './types';
 import { ThemeText } from '~/core/styles/ThemeText';
 import { hexToRgba } from '~/core/utils/helperFunctions';
 
-export const Container = styled.View<IContainerProps>`
-  display: ${({ loaderStatus }) => {
-    switch (loaderStatus) {
-      case LoaderStatusEnum.loading:
-      case LoaderStatusEnum.initial:
-        return 'none';
-      case LoaderStatusEnum.loaded:
-      default:
-        return 'flex';
-    }
-  }};
+export const Container = styled.View`
+  margin-top: 5px;
 `;
 
 export const Title = styled(ThemeText)`
   font-size: ${RFValue(20)}px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 `;
 
 export const Card = styled.View`

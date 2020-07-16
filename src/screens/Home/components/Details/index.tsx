@@ -5,10 +5,8 @@ import {
 } from './styles';
 import { IProps } from './types';
 
-const Details: React.FC<IProps> = ({ keyValueList, loaderStatus }) => (
-  <Container
-    loaderStatus={loaderStatus}
-  >
+const Details: React.FC<IProps> = ({ keyValueList }) => (
+  <Container>
     <Title>
       Informações adicionais
     </Title>
@@ -31,7 +29,6 @@ const Details: React.FC<IProps> = ({ keyValueList, loaderStatus }) => (
           )}
         </KeyValueView>
       ))}
-
     </Card>
   </Container>
 );
