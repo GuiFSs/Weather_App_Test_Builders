@@ -19,8 +19,8 @@ const BottomSection = () => {
       const { deg, speed } = wind;
 
       keyValueList = [
-        { key: 'miníma', value: `${getFormattedDegrees(temp_min)} ºC` },
-        { key: 'maxima', value: `${getFormattedDegrees(temp_max)} ºC` },
+        { key: 'mínima', value: `${getFormattedDegrees(temp_min)} ºC` },
+        { key: 'máxima', value: `${getFormattedDegrees(temp_max)} ºC` },
 
         { key: 'pressão', value: `${pressure}hPa` },
         { key: 'humidade', value: `${humidity}%` },

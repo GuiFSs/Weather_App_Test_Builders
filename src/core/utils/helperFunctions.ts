@@ -1,6 +1,5 @@
 import { format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
-import { StringOrNumber } from '../types/StringOrNumber';
 
 export function formatDate(date: Date, formatStr: string) {
   return format(date, formatStr, {
