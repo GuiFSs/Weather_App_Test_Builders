@@ -22,6 +22,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', 'import', 'jsx-a11y', 'react-native'],
+  parser: '@typescript-eslint/parser',
   rules: {
     'react/jsx-filename-extension': [
       'error',

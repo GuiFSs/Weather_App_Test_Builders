@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import weatherReducer from './weather/reducer';
 
 const rootReducer = combineReducers({
-  // reducers here
+  weather: weatherReducer,
 });
 
 export default rootReducer;

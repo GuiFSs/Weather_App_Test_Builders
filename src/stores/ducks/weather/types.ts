@@ -1,5 +1,6 @@
 import { LoaderStatusEnum } from '../../../core/enums/storeState';
 import { IOpenWeatherModel } from '../../../services/models/OpenWeatherModel';
+import { IGetWeatherByCoordParams } from '../../../services/interfaces/GetWeatherByCoordParams';
 
 /**
  * Types definitions
@@ -19,7 +20,7 @@ export enum WeatherTypesEnum {
  */
 export interface IWeatherState {
   readonly data: IOpenWeatherModel | null
-  readonly status: LoaderStatusEnum
+  readonly loaderStatus: LoaderStatusEnum
 }
 
 /**
@@ -27,7 +28,7 @@ export interface IWeatherState {
  */
 export interface IGetWeatherByCoordTrigger {
   type: typeof WeatherTypesEnum.GET_WEATHER_BY_COORD_TRIGGER,
-  payload: IGetWeatherByCoordTrigger
+  payload: IGetWeatherByCoordParams
 }
 
 export interface ISetWeather {
@@ -48,7 +49,7 @@ export interface IClearWeatherState {
  * Actions type
  */
 
-export type UserActionsType =
+export type WeatherActionsType =
 IGetWeatherByCoordTrigger |
 ISetWeather |
 ISetLoaderStatus|
