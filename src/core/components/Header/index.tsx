@@ -7,7 +7,6 @@ const Header = () => (
     <MenuIcon
       name="menu"
       size={80}
-      color="red"
     />
     <Title>
       Clima

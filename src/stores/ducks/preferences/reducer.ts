@@ -1,10 +1,10 @@
 import { Reducer } from 'redux';
 import { IPreferencesState, PreferencesActionsType, PreferencesTypesEnum } from './types';
 import { LoaderStatusEnum } from '../../../core/enums/loaderStatus';
-import { lightTheme } from '../../../core/styles/theme';
+import { darkTheme } from '../../../core/styles/theme';
 
 const INITIAL_STATE: IPreferencesState = {
-  theme: lightTheme,
+  theme: darkTheme,
   loaderStatus: LoaderStatusEnum.initial,
 };
 

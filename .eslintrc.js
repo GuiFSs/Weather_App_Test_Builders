@@ -41,6 +41,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'react/destructuring-assignment': 'warn',
     '@typescript-eslint/no-empty-interface': 'off',
+    'react/prop-types': 'off',
   },
   settings: {
     'import/parsers': {

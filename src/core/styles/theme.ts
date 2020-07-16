@@ -11,7 +11,7 @@ export const lightTheme: DefaultTheme = {
     primary: '#4995E9',
     secondary: '#f7b801',
     background: '#F3FBFF',
-    text: '#283257',
+    text: '#2A365A',
   },
 };
 
@@ -20,8 +20,7 @@ export const darkTheme: DefaultTheme = {
   colors: {
     primary: '#4995E9',
     secondary: '#f7b801',
-
-    background: '#2A365A',
+    background: '#10103B',
     text: '#FFF',
   },
 };

@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Entypo';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { ThemeText } from '../../styles/ThemeText';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -9,9 +10,8 @@ export const Container = styled.View`
   padding-bottom: 15px;
 `;
 
-export const Title = styled.Text`
+export const Title = styled(ThemeText)`
   flex: 1;
-  color: ${({ theme }) => theme.colors.text};
   font-size: ${RFValue(22)}px;
   text-align: center;
   font-weight: bold;
