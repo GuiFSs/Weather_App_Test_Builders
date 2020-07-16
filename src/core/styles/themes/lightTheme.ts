@@ -1,12 +1,13 @@
-import { ITheme, ThemeTitleEnum } from 'core/interfaces/theme';
+import { DefaultTheme } from 'styled-components';
+import { ThemeTitleEnum } from '../../interfaces/theme';
 
-const lightTheme: ITheme = {
+const lightTheme: DefaultTheme = {
+  title: ThemeTitleEnum.light,
   colors: {
-    title: ThemeTitleEnum.light,
     primary: '#3d348b',
     secondary: '#f7b801',
-    background: '#f5f5f5',
-    text: '#333',
+    background: '#FFFFFF',
+    text: '#04121B',
   },
 };
 

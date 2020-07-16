@@ -28,7 +28,7 @@ const WeatherActions = {
     payload,
   ),
 
-  clearWeatherState: (): IClearWeatherState => action(
+  clearState: (): IClearWeatherState => action(
     WeatherTypesEnum.CLEAR_WEATHER_STATE,
   ),
 };

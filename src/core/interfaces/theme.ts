@@ -1,11 +1,11 @@
 export interface ITheme {
+  title: ThemeTitleEnum,
   colors: {
-    title: ThemeTitleEnum,
-    primary: '#3d348b',
-    secondary: '#f7b801',
+    primary: string,
+    secondary: string,
 
-    background: '#f5f5f5',
-    text: '#333',
+    background: string,
+    text: string,
   },
 }
 

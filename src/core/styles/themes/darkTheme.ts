@@ -1,8 +1,9 @@
-import { ITheme, ThemeTitleEnum } from '../../interfaces/theme';
+import { DefaultTheme } from 'styled-components';
+import { ThemeTitleEnum } from '../../interfaces/theme';
 
-const darkTheme: ITheme = {
+const darkTheme: DefaultTheme = {
+  title: ThemeTitleEnum.dark,
   colors: {
-    title: ThemeTitleEnum.dark,
     primary: '#3d348b',
     secondary: '#f7b801',
 
