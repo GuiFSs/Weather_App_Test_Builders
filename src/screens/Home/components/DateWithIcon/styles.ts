@@ -18,7 +18,6 @@ export const WeatherIconView = styled.View`
 export const WeatherIcon = styled.Image<IIconProps>`
   width: ${RFValue(50)}px;
   height: ${RFValue(50)}px;
-  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const DateView = styled.View`

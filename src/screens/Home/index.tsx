@@ -9,11 +9,15 @@ import { AppStateType } from '../../stores';
 import { BarStyleType } from '../../core/types/BarStyle';
 import { ThemeTitleEnum } from '../../core/interfaces/theme';
 import { useGeolocation } from '../../core/hooks/useGeolocation';
+import { LoaderStatusEnum } from '../../core/enums/loaderStatus';
+import LoadingModal from '../../core/components/LoadingModal';
 
 const Home = () => {
   const dispatch = useDispatch();
 
   const { theme } = useSelector((state: AppStateType) => state.preferences);
+  const { loaderStatus: weatherLoader } = useSelector((state: AppStateType) => state.weather);
+
   const {
     coords, getGeolocation,
   } = useGeolocation();
@@ -37,8 +41,11 @@ const Home = () => {
     return style;
   }, [theme.title]);
 
+  const loading = useMemo(() => weatherLoader === LoaderStatusEnum.loading, [weatherLoader]);
+
   return (
     <SafeArea>
+      <LoadingModal loading={loading} />
       <StatusBar
         backgroundColor={theme.colors.background}
         barStyle={barStyle}
