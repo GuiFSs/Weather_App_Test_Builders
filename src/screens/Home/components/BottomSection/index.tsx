@@ -7,7 +7,7 @@ import { IKeyValue } from '../Details/types';
 import Details from '../Details';
 
 const BottomSection = () => {
-  const { data: weatherData, loaderStatus } = useSelector((state: AppStateType) => state.weather);
+  const { data: weatherData } = useSelector((state: AppStateType) => state.weather);
 
   const detailsKeyValue = useMemo(() => {
     let keyValueList: IKeyValue[] = [];
@@ -37,7 +37,6 @@ const BottomSection = () => {
     <View>
       <Details
         keyValueList={detailsKeyValue}
-        loaderStatus={loaderStatus}
       />
     </View>
   );

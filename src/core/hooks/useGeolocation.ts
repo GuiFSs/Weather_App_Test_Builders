@@ -3,6 +3,9 @@ import Geolocation from '@react-native-community/geolocation';
 import { Alert, PermissionsAndroid } from 'react-native';
 import { ICoord } from '~/services/models/OpenWeatherModel';
 
+/**
+ * @description hooks to get Geolocation coords and request location permissions
+ */
 export function useGeolocation() {
   const [coords, setCoords] = useState<ICoord | null>(null);
   const [hasLocationPermission, setHasLocationPermission] = useState(false);
@@ -20,7 +23,9 @@ export function useGeolocation() {
 
   const checkPermission = async () => {
     try {
-      const granted = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
+      const granted = await PermissionsAndroid.check(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      );
       return granted;
     } catch (err) {
       Alert.alert('Erro ao checar permissões');
@@ -30,7 +35,9 @@ export function useGeolocation() {
 
   const requestPermission = async () => {
     try {
-      const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION);
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      );
       return granted;
     } catch (err) {
       Alert.alert('Erro ao requisitar permissões');

@@ -7,6 +7,7 @@ export type AppStateType = ReturnType<typeof rootReducer>;
 
 const sagaMiddleware = createSagaMiddleware();
 
+// config to use Redux Devtools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
