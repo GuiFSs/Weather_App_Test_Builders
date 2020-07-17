@@ -8,13 +8,13 @@ import WeatherActions from '~/stores/ducks/weather/actions';
 import { BarStyleType } from '~/core/types/BarStyle';
 import { ThemeTitleEnum } from '~/core/interfaces/theme';
 import { LoaderStatusEnum } from '~/core/enums/loaderStatus';
-import { SafeArea } from './styles';
 import TopSection from './components/TopSection';
 import BottomSection from './components/BottomSection';
 import Header from '~/core/components/Header';
 import LoadingModal from '~/core/components/LoadingModal';
 import FloatButton from '~/core/components/FloatButton';
 import Background from '~/core/components/Background';
+import { SafeArea } from '~/core/styles/SafeArea';
 
 const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
   const dispatch = useDispatch();

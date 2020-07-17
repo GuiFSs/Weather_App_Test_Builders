@@ -13,11 +13,10 @@ const preferencesReducer: Reducer<IPreferencesState, PreferencesActionsType> = (
   action,
 ) => {
   switch (action.type) {
-    case PreferencesTypesEnum.SET_THEME:
+    case PreferencesTypesEnum.SET_THEME_STORE:
       return { ...state, theme: action.payload };
-    case PreferencesTypesEnum.SET_LOADER_STATUS: {
+    case PreferencesTypesEnum.SET_LOADER_STATUS:
       return { ...state, loaderStatus: action.payload };
-    }
     case PreferencesTypesEnum.CLEAR_PREFERENCES_STATE:
       return { ...INITIAL_STATE };
     default:
