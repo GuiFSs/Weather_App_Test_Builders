@@ -11,3 +11,9 @@ O Design foi inspirado [nessas telas](https://dribbble.com/shots/6932038-Mobile-
 ![App - Tema Dark](https://user-images.githubusercontent.com/37676399/87742754-c4a33c80-c7bd-11ea-9e27-5e4f183e2bbf.png) ![App - Tema Light](https://user-images.githubusercontent.com/37676399/87742795-da186680-c7bd-11ea-917e-887f6f9208fe.png)
 
 [Link para o APK](https://drive.google.com/file/d/1wIEzuOfFIE9EZztM1Pzs6wrwlhguaApg/view?usp=sharing), espero que funcione 😅
+
+### Como usar
+1. `yarn` ou `npm install` na pasta do projeto para instalar as libs
+2. `yarn android` para rodar o app
+
+Obs: É necessário aceitar as permissões de localização para usar.
