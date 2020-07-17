@@ -29,7 +29,6 @@ const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
   const getWeather = useCallback(() => {
     if (!hasLocationPermission) {
       getGeolocation();
-      return;
     }
     if (!coords) return;
     dispatch(WeatherActions.getWeatherByCoord({
@@ -68,6 +67,8 @@ const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
         return true;
     }
   }, [weatherLoader, data]);
+
+  console.log('LOADING [HOME]:', loading);
 
   return (
     <SafeArea>

@@ -6,7 +6,6 @@ import { LoaderStatusEnum } from '~/core/enums/loaderStatus';
 import Storage from '~/core/utils/Storage';
 
 function* setTheme({ payload }: ISetTheme) {
-  console.log('SALVOU');
   yield put(PreferencesActions.setLoaderStatus(LoaderStatusEnum.loading));
   try {
     yield put(PreferencesActions.setThemeStore(payload));

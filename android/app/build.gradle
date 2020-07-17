@@ -132,8 +132,8 @@ android {
         applicationId "com.weather_app_test_builders"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 10001
+        versionName "1.0.1"
     }
     splits {
         abi {
