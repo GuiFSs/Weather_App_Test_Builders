@@ -16,4 +16,4 @@ O Design foi inspirado [nessas telas](https://dribbble.com/shots/6932038-Mobile-
 1. `yarn` ou `npm install` na pasta do projeto para instalar as libs
 2. `yarn android` para rodar o app
 
-Obs: É necessário aceitar as permissões de localização para usar.
+**Obs**: É necessário aceitar as permissões de localização para usar.
