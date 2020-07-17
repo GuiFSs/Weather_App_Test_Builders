@@ -45,8 +45,6 @@ const SplashScreen: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => 
 
   const loading = useMemo(() => loaderStatus === LoaderStatusEnum.initial, [loaderStatus]);
 
-  console.log('LOADING [SPLASH]:', loading);
-
   return (
     <SafeArea>
       <Background />

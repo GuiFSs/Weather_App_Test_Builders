@@ -42,6 +42,11 @@ const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
 
   useEffect(() => {
     getWeather();
+    const getWeatherInterval = setInterval(getWeather, 60 * 1000);
+
+    return () => {
+      clearInterval(getWeatherInterval);
+    };
   }, [getWeather]);
 
   const barStyle = useMemo(() => {
@@ -67,8 +72,6 @@ const Home: React.FC<DrawerScreenProps<any, any>> = ({ navigation }) => {
         return true;
     }
   }, [weatherLoader, data]);
-
-  console.log('LOADING [HOME]:', loading);
 
   return (
     <SafeArea>
